@@ -13,6 +13,8 @@ import os
 
 from pathlib import Path
 
+from django import middleware
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -55,7 +57,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'movies',
 ]
-"MIDDLEWARE".insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+middleware.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
