@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["http://127.0.0.1:8000.onrender.com","127.0.0.1:8000"]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE ="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DATABASES = {
     'default': {
@@ -57,10 +57,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'movies',
 ]
-middleware.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
